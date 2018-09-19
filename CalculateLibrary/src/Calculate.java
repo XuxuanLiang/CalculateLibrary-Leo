@@ -3,6 +3,7 @@
  *@version 0.1
  */
 public class Calculate {
+	//Part 1
 	//return the square of the input
 	public static int square(int num) {
 		int answer;
@@ -67,6 +68,7 @@ public class Calculate {
 		answer = num1*num3+variable+"^2"+"+"+(num1*num4+num2*num3)+variable+"+"+(num2*num4);
 		return answer;
 	}
+	//Part 2
 	public static double max(double num1, double num2) {
 		if(num1>num2)
 			return num1;
@@ -104,5 +106,7 @@ public class Calculate {
 		double answer = (int) b;
 		answer = b*0.01;
 		return answer;
+	}// Part 3
+	public static double exponent(double base, int power) {
 	}
 }
