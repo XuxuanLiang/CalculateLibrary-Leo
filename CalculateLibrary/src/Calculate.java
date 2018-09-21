@@ -108,5 +108,10 @@ public class Calculate {
 		return answer;
 	}// Part 3
 	public static double exponent(double base, int power) {
+		int i;
+		int answer;
+		for(i=1; i<=power; i++) {
+			answer = 
+		}
 	}
 }
