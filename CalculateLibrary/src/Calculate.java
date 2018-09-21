@@ -86,9 +86,8 @@ public class Calculate {
 		else if(num2>num3) {
 			return num2;}
 		else {
-			return num3;
-		}
-		}
+			return num3;}
+	}
 	public static double absValue(double num) {
 		if(num>0)
 			return num;
@@ -109,9 +108,24 @@ public class Calculate {
 	}// Part 3
 	public static double exponent(double base, int power) {
 		int i;
-		int answer;
+		double answer;
 		for(i=1; i<=power; i++) {
-			answer = 
-		}
+			answer = base*answer;}
+			return answer;}
+	public static int factorial(int num) {
+		int multi;
+		int answer;
+		for(int i=1; i<=num; i++) {
+			answer = answer*1;}
+		return answer;
 	}
-}
+	public static boolean isPrime(int num) {
+		for(int fac=2; fac<=num; fac++) {
+			if(Calculate.isDivisibleBy(num, fac)==true) {
+				return false;}
+			return true;}
+	}
+	public static int gcf(int num1, int num2) {
+		int answer;
+		for(fac=num1; )
+	}
