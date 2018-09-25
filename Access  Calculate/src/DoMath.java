@@ -21,6 +21,7 @@ public class DoMath {
 		System.out.println(Calculate.absValue(-10));
 		System.out.println(Calculate.isDivisibleBy(5, 4));
 		System.out.println(Calculate.round2(12.344));
+		System.out.println(Calculate.sqrt(4));
 	}
 
 }

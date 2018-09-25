@@ -108,24 +108,55 @@ public class Calculate {
 	}// Part 3
 	public static double exponent(double base, int power) {
 		int i;
-		double answer;
+		double answer=0;
 		for(i=1; i<=power; i++) {
 			answer = base*answer;}
 			return answer;}
 	public static int factorial(int num) {
-		int multi;
-		int answer;
+		int answer=0;
 		for(int i=1; i<=num; i++) {
 			answer = answer*1;}
 		return answer;
 	}
-	public static boolean isPrime(int num) {
-		for(int fac=2; fac<=num; fac++) {
-			if(Calculate.isDivisibleBy(num, fac)==true) {
+	public static boolean isPrime(int num) 
+	{
+		for(int fac=2; fac<=num; fac++) 
+		{
+			if(Calculate.isDivisibleBy(num, fac)==true) 
+			{
 				return false;}
-			return true;}
+		}return true;
 	}
-	public static int gcf(int num1, int num2) {
-		int answer;
-		for(fac=num1; )
+	public static int gcf(int num1, int num2) 
+	{
+		int answer=0;
+		for(int factor=num1; num1%factor==0 && num2%factor==0; factor--) 
+		{
+			factor = answer; }
+		return answer;
 	}
+	public static double sqrt(double num) {
+		double root = num;
+		double est = root;
+		if(num==0) {
+			root = 0;
+			return root;
+		}
+		if(num<0) {
+			throw new IllegalArgumentException("Square root cannot be 0");
+		}
+		if(num>0) {
+			root = num/2;
+			do {
+				root=est;
+				root = (1/2)*(num/est+est);
+			}
+			while ((root*root-num)!=0);
+		}
+		else {
+			root= num;
+		}
+			return Calculate.round2(root);
+	}
+}
+		
