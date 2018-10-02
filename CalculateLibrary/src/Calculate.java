@@ -74,7 +74,7 @@ public class Calculate {
 			return num1;
 		else return num2;
 	}
-	public static double min(double num1, double num2) {
+	public static int min(int num1, int num2) {
 		if(num1<num2)
 			return num1;
 		else return num2;		
@@ -174,4 +174,6 @@ public class Calculate {
 			return Calculate.round2(root1)+"and"+Calculate.round2(root2);
 		}
  	}
+ 	//part 5
+ 	
 }
