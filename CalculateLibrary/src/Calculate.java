@@ -94,6 +94,9 @@ public class Calculate {
 		else return -num;
 	}
 	public static boolean isDivisibleBy(int num1, int num2) {
+		if(num2==0) {
+			throw new IllegalArgumentException("Disvisitor can not be 0.");
+		}
 		if(num1%num2==0) {
 			return true;}
 		else {
@@ -109,13 +112,19 @@ public class Calculate {
 	public static double exponent(double base, int power) {
 		int i;
 		double answer=0;
+		if (power<0) {
+			throw new IllegalArgumentException("No negtive power for this method");
+		}
 		for(i=1; i<=power; i++) {
 			answer = base*answer;}
 			return answer;}
 	public static int factorial(int num) {
+		if (num<0) {
+			throw new IllegalArgumentException("numbers can not be 0");
+		}
 		int answer=0;
 		for(int i=1; i<=num; i++) {
-			answer = answer*1;}
+			answer = answer*i;}
 		return answer;
 	}
 	public static boolean isPrime(int num) 
@@ -136,27 +145,33 @@ public class Calculate {
 		return answer;
 	}
 	public static double sqrt(double num) {
-		double root = num;
-		double est = root;
+		double root=num;
+		if(num<0) throw new IllegalArgumentException("The root of negative number is imaginary number");
 		if(num==0) {
-			root = 0;
-			return root;
-		}
-		if(num<0) {
-			throw new IllegalArgumentException("Square root cannot be 0");
-		}
-		if(num>0) {
-			root = num/2;
-			do {
-				root=est;
-				root = (1/2)*(num/est+est);
+			root=0;
 			}
-			while ((root*root-num)!=0);
+		if(num>0) {
+			 while(Calculate.absValue(root*root-num)>=0.005) {
+				 root=(num/root+root)/2;
+			 }
+		}
+		return Calculate.round2(root);
+	}
+	//Part 4
+ 	public static String quadForm(int a, int b, int c) {
+		double root1= ((-b)+Calculate.sqrt((b*b-4*a*c)))/(2*a);
+		double root2= ((-b)-Calculate.sqrt((b*b-4*a*c)))/(2*a);
+		if (root1 == 0 && root2 == 0) {
+			return "no real roots.";
+		}
+		else if (root1==root2) {
+			return Calculate.round2(root1)+"";
+		}
+		else if (root1>root2) {
+			return Calculate.round2(root2)+"and"+Calculate.round2(root1);
 		}
 		else {
-			root= num;
+			return Calculate.round2(root1)+"and"+Calculate.round2(root2);
 		}
-			return Calculate.round2(root);
-	}
+ 	}
 }
-		
